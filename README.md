@@ -22,10 +22,6 @@
 
 <br />
 
-![soft-ui-dashboard-pro-screen](https://user-images.githubusercontent.com/51070104/145958818-b2080e5c-b369-4be6-a1a8-a49727f6f8bb.png)
-
-<br /> 
-
 ## Quick Start in [Docker](https://www.docker.com/)
 
 > Get the code
@@ -44,6 +40,10 @@ $ docker-compose up --build
 Visit `http://localhost:85` in your browser. The app should be up & running.
 
 <br />
+
+![soft-ui-dashboard-pro-screen](https://user-images.githubusercontent.com/51070104/145958818-b2080e5c-b369-4be6-a1a8-a49727f6f8bb.png)
+
+<br /> 
 
 ## Build from sources
 
