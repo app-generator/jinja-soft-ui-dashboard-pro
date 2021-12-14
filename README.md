@@ -1,4 +1,4 @@
-# [Soft UI Dashboard](https://appseed.us/ui-kit/soft-ui-design-system) PRO Jinja
+# [Soft UI Dashboard PRO Jinja](https://appseed.us/product/flask-soft-ui-dashboard-pro)
 
 **Jinja Template** provided by AppSeed on top of **Soft UI Dashboard PRO**, a modern Bootstrap 5 design from Creative-Tim. The project might help beginners to code simple presentation websites on top of the existing codebase OR migrate the `production-ready` UI to a legacy Python-based project compatible with **Jinja Template Engine**: *Flask*, *Django*, *Bottle* of *FastAPI*. 
 
@@ -6,7 +6,9 @@
 
 > Features:
 
-- UI Kit: **[Soft UI Dashboard PRO](https://bit.ly/2RtSXVa)** (Free Version) by **Creative-Tim**
+- Up-to-date [dependencies](./requirements.txt): **Flask 2.0.1**
+- [SCSS compilation](#recompile-css) via **Gulp**
+- UI Kit: **[Soft UI Dashboard PRO](https://bit.ly/2RtSXVa)** (PRO Version) by **Creative-Tim**
 - Render Engine: Flask / Jinja2
 - Deployment scripts: Docker, Gunicorn/Nginx, HEROKU
 - Support via **Github** (issues tracker) and [Discord](https://discord.gg/fZC6hup).
@@ -20,15 +22,26 @@
 
 <br />
 
-## [Soft UI Dashboard PRO](https://bit.ly/2RtSXVa)
+![soft-ui-dashboard-pro-screen](https://user-images.githubusercontent.com/51070104/145958818-b2080e5c-b369-4be6-a1a8-a49727f6f8bb.png)
 
-The most complex and innovative Dashboard Made by Creative Tim: made of hundred of elements, designed blocks and fully coded pages, Soft UI Dashboard is ready to help you create stunning websites and web apps. 
+<br /> 
 
-**Fully Coded Elements** - Soft UI Dashboard PRO is built with over 300 frontend individual elements, like buttons, inputs, navbars, navtabs, cards or alerts, giving you the freedom of choosing and combining. All components can take variations in colour, that you can easily modify using SASS files and classes.
+## Quick Start in [Docker](https://www.docker.com/)
 
-<br />
+> Get the code
 
-![Jinja Template - Soft UI Dashboard PRO.](https://user-images.githubusercontent.com/51070104/123506854-faf46780-d66e-11eb-88ed-1cb13513154e.png)
+```bash
+$ git clone https://github.com/app-generator/priv-jinja-soft-ui-dashboard-pro.git
+$ cd priv-jinja-soft-ui-dashboard-pro
+```
+
+> Start the app in Docker
+
+```bash
+$ docker-compose up --build 
+```
+
+Visit `http://localhost:85` in your browser. The app should be up & running.
 
 <br />
 
@@ -77,7 +90,6 @@ The project has a simple structure, represented as bellow:
 ```bash
 < PROJECT ROOT >
    |
-   |-- app/__init__.py
    |-- app/
    |    |-- static/
    |    |    |-- <css, JS, images>         # CSS files, Javascripts files
@@ -96,19 +108,30 @@ The project has a simple structure, represented as bellow:
    |    |    |    |-- base.html            # Used by common pages like index, UI
    |    |    |    |-- base-fullscreen.html # Used by auth pages (login, register)
    |    |    |
-   |    |  index.html                      # The default page
-   |    |  login.html                      # Auth Login Page
-   |    |  register.html                   # Auth Registration Page
-   |    |  page-404.html                   # Error 404 page (page not found)
-   |    |  page-500.html                   # Error 500 page (server error)
-   |    |    *.html                        # All other pages provided by the UI Kit
+   |    |    |-- accounts/                 # Auth Pages (login, register)
+   |    |    |    |
+   |    |    |    |-- login.html           # Use layout `base-fullscreen.html`
+   |    |    |    |-- register.html        # Use layout `base-fullscreen.html`  
+   |    |    |
+   |    |    |-- home/                      # UI Kit Pages
+   |    |         |-- index.html            # Index page
+   |    |         |-- 404-page.html         # 404 page
+   |    |         |-- *.html                # All other pages
+   |    |
+   |   views.py                             # Application Routes 
+   |
+   |-- Dockerfile                           # Deployment
+   |-- docker-compose.yml                   # Deployment
+   |-- gunicorn-cfg.py                      # Deployment   
+   |-- nginx                                # Deployment
+   |    |-- appseed-app.conf                # Deployment 
    |
    |-- requirements.txt
-   |
    |-- run.py
    |
    |-- ************************************************************************
 ```
+
 
 <br />
 
@@ -267,4 +290,4 @@ Visit `http://localhost:8001` in your browser. The app should be up & running.
 <br />
 
 ---
-[Soft UI Dashboard PRO](https://appseed.us/ui-kit/soft-ui-design-system) Jinja - Provided by **AppSeed** [App Generator](https://appseed.us/app-generator).
+[Soft UI Dashboard PRO Jinja](https://appseed.us/product/flask-soft-ui-dashboard-pro) - Provided by **AppSeed** [App Generator](https://appseed.us/app-generator).
